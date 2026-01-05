@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Songs I Recorded for You</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background:
+        linear-gradient(180deg,#2a1b17,#3b2520,#f3ead7);
+      background-attachment: fixed;
+      color: #f5ede3;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      line-height: 1.1;
+      animation: fadeUp 1.8s ease forwards;
+    }
+
+    h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.9rem;
+      color:#3e2f1c;
+    }
+
+    .song-note {
+      font-size: 1rem;
+      color:#5a4632;
+    }
+
+    .song-card {
+      background: #fff7e6;
+      border-radius: 22px;
+      box-shadow: 0 22px 45px rgba(0,0,0,0.35);
+      transition: transform .5s ease, box-shadow .5s ease;
+      animation: fadeUp 1.6s ease forwards;
+    }
+
+    .song-card:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 35px 65px rgba(0,0,0,0.45);
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    .decor {
+      opacity: 0.15;
+      pointer-events: none;
+      animation: drift 18s ease-in-out infinite;
+    }
+
+    @keyframes fadeUp{
+      from{opacity:0; transform:translateY(30px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
+    @keyframes drift{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(14px);}
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full z-50 bg-[#2a1b17]/80 backdrop-blur shadow">
+  <div class="max-w-6xl mx-auto px-6 py-3 flex justify-center space-x-6 text-sm text-[#f3ead7]">
+    <a href="index.html" class="hover:text-amber-300">Home</a>
+    <a href="letters.html" class="hover:text-amber-300">Letters</a>
+    <a href="songs.html" class="text-amber-300 font-semibold">Songs</a>
+    <a href="memories.html" class="hover:text-amber-300">Memories</a>
+    <a href="future.html" class="hover:text-amber-300">Future</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-40 pb-24 px-6 text-center relative">
+
+  <!-- Decorative music vectors -->
+  <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" class="decor absolute top-12 left-12 w-24">
+  <img src="https://cdn-icons-png.flaticon.com/512/3659/3659784.png" class="decor absolute top-32 right-20 w-20">
+  <img src="https://cdn-icons-png.flaticon.com/512/827/827933.png" class="decor absolute bottom-16 left-24 w-28">
+  <img src="https://cdn-icons-png.flaticon.com/512/2995/2995101.png" class="decor absolute bottom-10 right-28 w-24">
+
+  <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-amber-200 mx-auto mb-8"
+      style="max-width: 66vw;">
+    Songs,<br>Just for You
+  </h1>
+
+  <p class="max-w-xl mx-auto italic text-[#f1dcc3]">
+    When words were not enough,  
+    I let my voice speak.
+  </p>
+</section>
+
+<!-- SONG LIST -->
+<section class="px-6 pb-28 relative">
+
+  <!-- subtle vectors -->
+  <img src="https://cdn-icons-png.flaticon.com/512/727/727218.png" class="decor absolute top-10 right-10 w-20">
+  <img src="https://cdn-icons-png.flaticon.com/512/3659/3659779.png" class="decor absolute bottom-10 left-10 w-24">
+  <img src="https://cdn-icons-png.flaticon.com/512/2995/2995107.png" class="decor absolute top-1/2 -left-10 w-28">
+
+  <div class="max-w-4xl mx-auto space-y-20">
+
+    <div class="song-card p-12 text-center">
+      <h2 class="mb-3">For Your Calm Evenings</h2>
+      <p class="song-note italic mb-8">
+        A melody to sit beside you when the world feels quiet.
+      </p>
+      <audio controls class="mb-6">
+        <source src="audio/audio1.mp3" type="audio/mpeg">
+      </audio>
+      <a href="https://drive.google.com/" target="_blank"
+         class="inline-block px-6 py-3 rounded-full bg-amber-800 text-white hover:bg-amber-900 transition">
+        Listen / Download from Drive
+      </a>
+    </div>
+
+    <div class="song-card p-12 text-center">
+      <h2 class="mb-3">When You Miss Me</h2>
+      <p class="song-note italic mb-8">
+        Play this when distance feels heavy.
+      </p>
+      <audio controls class="mb-6">
+        <source src="audio/audio2.mp3" type="audio/mpeg">
+      </audio>
+      <a href="https://drive.google.com/" target="_blank"
+         class="inline-block px-6 py-3 rounded-full bg-amber-800 text-white hover:bg-amber-900 transition">
+        Listen / Download from Drive
+      </a>
+    </div>
+
+    <div class="song-card p-12 text-center">
+      <h2 class="mb-3">A Song for Your Smile</h2>
+      <p class="song-note italic mb-8">
+        Because your smile deserves its own melody.
+      </p>
+      <audio controls class="mb-6">
+        <source src="audio/audio3.mp3" type="audio/mpeg">
+      </audio>
+      <a href="https://drive.google.com/" target="_blank"
+         class="inline-block px-6 py-3 rounded-full bg-amber-800 text-white hover:bg-amber-900 transition">
+        Listen / Download from Drive
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center py-6 text-[#e5d3b3] italic text-sm">
+  Recorded with love, kept with care
+</footer>
+
+</body>
+</html>
