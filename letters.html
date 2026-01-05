@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>চিঠিগুলো শুধু তোমার জন্য</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Handwritten Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Allura&family=Caveat:wght@400;600&family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Hind Siliguri', serif;
+      background-color: #f6ecd8;
+      background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+      color: #4a3b2a;
+    }
+
+    .title-font {
+      font-family: 'Great Vibes', cursive;
+      position: relative;
+      animation: fadeUp 1.6s ease forwards;
+    }
+
+    /* calligraphic underline flourish */
+    .title-font::after{
+      content:"";
+      display:block;
+      width:120px;
+      height:2px;
+      margin:14px auto 0;
+      background:linear-gradient(90deg,transparent,#c6a25d,transparent);
+      opacity:.7;
+    }
+
+    .subtitle {
+      animation: fadeUp 2.2s ease forwards;
+    }
+
+    .letter-title {
+      font-family: 'Allura', cursive;
+    }
+
+    .letter-body {
+      font-family: 'Caveat', cursive;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    .paper {
+      background-color: #fff9ec;
+      background-image: url("https://www.transparenttextures.com/patterns/old-paper.png");
+      border-radius: 18px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+      transition: transform .6s ease, box-shadow .6s ease;
+      animation: paperFloat 8s ease-in-out infinite;
+    }
+
+    .paper:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    }
+
+    .decor {
+      opacity: 0.12;
+      pointer-events: none;
+      animation: drift 14s ease-in-out infinite;
+    }
+
+    /* modal animation */
+    .modal-anim{
+      animation: modalIn .45s ease forwards;
+    }
+
+    @keyframes fadeUp{
+      from{opacity:0; transform:translateY(30px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
+    @keyframes paperFloat{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-6px);}
+    }
+
+    @keyframes drift{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(12px);}
+    }
+
+    @keyframes modalIn{
+      from{opacity:0; transform:scale(.95);}
+      to{opacity:1; transform:scale(1);}
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff5e1]/90 backdrop-blur shadow">
+  <div class="max-w-6xl mx-auto px-6 py-3 flex justify-center space-x-6 text-sm">
+    <a href="index.html" class="hover:text-amber-700">Home</a>
+    <a href="letters.html" class="text-amber-900 font-semibold">Letters</a>
+    <a href="songs.html" class="hover:text-amber-700">Songs</a>
+    <a href="memories.html" class="hover:text-amber-700">Memories</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-36 pb-20 px-6 text-center relative">
+
+  <!-- Decorative elements -->
+  <img src="https://images.unsplash.com/photo-1600180758890-6b94519b5e62"
+       class="decor absolute top-16 left-10 w-48 rotate-6">
+
+  <img src="https://images.unsplash.com/photo-1616628182506-5f9d3d7f0aab"
+       class="decor absolute bottom-10 right-16 w-52 -rotate-6">
+
+  <!-- extra subtle vectors -->
+  <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc"
+       class="decor absolute top-32 right-1/3 w-40">
+  <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338"
+       class="decor absolute bottom-24 left-1/4 w-44">
+
+  <h1 class="title-font text-5xl md:text-6xl text-amber-900 mb-6">
+    চিঠিগুলো শুধু তোমার জন্য
+  </h1>
+
+  <p class="subtitle max-w-xl mx-auto text-[#5b4a36] italic">
+    কিছু ভালোবাসা মুখে বলা যায় না,  
+    তাই কাগজে লিখে রেখে দিতে হয়।
+  </p>
+</section>
+
+<!-- LETTER GRID -->
+<section class="px-6 pb-28 relative">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 max-w-6xl mx-auto">
+
+    <button onclick="openLetter('l1')" class="paper p-10 text-center">
+      <h2 class="letter-title text-3xl text-amber-800 mb-3">
+        তোমার হাসির জন্য
+      </h2>
+      <p class="letter-body">
+        যখন সবকিছু ভারী লাগে,  
+        তখন তোমার হাসিই আমার আশ্রয়।
+      </p>
+    </button>
+
+    <button onclick="openLetter('l2')" class="paper p-8 text-center">
+      <h2 class="letter-title text-2xl text-amber-800 mb-2">
+        যেদিন তুমি ক্লান্ত
+      </h2>
+      <p class="letter-body">
+        এই চিঠিটা পড়বে  
+        যেদিন নিজেকে হারিয়ে ফেলবে।
+      </p>
+    </button>
+
+    <button onclick="openLetter('l3')" class="paper p-12 text-center">
+      <h2 class="letter-title text-4xl text-amber-800 mb-4">
+        তোমার নীরবতার জন্য
+      </h2>
+      <p class="letter-body">
+        তুমি চুপ থাকলে  
+        আমি তবুও বুঝতে পারি।
+      </p>
+    </button>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50 px-4">
+  <div class="paper modal-anim max-w-2xl w-full p-12 relative overflow-y-auto max-h-[90vh]">
+
+    <img src="https://images.unsplash.com/photo-1618336753974-aae8e04506aa"
+         class="decor absolute -top-8 -left-8 w-28">
+
+    <button onclick="closeLetter()" class="absolute top-4 right-4 text-[#6b5742] text-xl">
+      ✕
+    </button>
+
+    <h2 id="modalTitle" class="letter-title text-4xl text-center text-amber-900 mb-6"></h2>
+    <p id="modalContent" class="letter-body text-center mb-8"></p>
+
+    <div class="text-center">
+      <a id="driveLink" target="_blank"
+         class="inline-block px-8 py-3 rounded-full bg-amber-800 text-white hover:bg-amber-900 transition">
+        হাতের লেখা চিঠি দেখুন
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center py-8 text-[#6b5742] italic text-sm">
+  লেখা ছিল হৃদয় থেকে, রাখা ছিল তোমার জন্য
+</footer>
+
+<script>
+  const letters = {
+    l1: {
+      title: "তোমার হাসির জন্য",
+      content: "তুমি হাসলে আমার ভেতরের সব ক্লান্তি মিলিয়ে যায়। এই হাসিটা আমি সারাজীবন আগলে রাখতে চাই।",
+      link: "https://drive.google.com/"
+    },
+    l2: {
+      title: "যেদিন তুমি ক্লান্ত",
+      content: "যেদিন পৃথিবী তোমাকে ক্লান্ত করে দেবে, সেদিন এই চিঠিটা মনে করিয়ে দেবে—তুমি একা নও।",
+      link: "https://drive.google.com/"
+    },
+    l3: {
+      title: "তোমার নীরবতার জন্য",
+      content: "নীরবতার মধ্যেও ভালোবাসা থাকে। আমি সেই নীরবতাকে বুঝতে শিখেছি।",
+      link: "https://drive.google.com/"
+    }
+  };
+
+  function openLetter(key) {
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    modalTitle.innerText = letters[key].title;
+    modalContent.innerText = letters[key].content;
+    driveLink.href = letters[key].link;
+  }
+
+  function closeLetter() {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+</script>
+
+</body>
+</html>
