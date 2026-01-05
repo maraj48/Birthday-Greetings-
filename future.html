@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Future</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600;700&family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      font-family:'Hind Siliguri',sans-serif;
+      background:linear-gradient(180deg,#fff1eb,#ffe4d6,#fff7f0);
+      color:#3b2a1f;
+    }
+    h1{font-family:'Great Vibes',cursive;}
+    h2,h3{font-family:'Playfair Display',serif;}
+    .section{max-width:900px;margin:auto;}
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff1eb]/90 backdrop-blur shadow">
+  <div class="max-w-6xl mx-auto px-6 py-3 flex justify-center space-x-6 text-sm">
+    <a href="index.html">Home</a>
+    <a href="letters.html">Letters</a>
+    <a href="songs.html">Songs</a>
+    <a href="memories.html">Memories</a>
+    <a href="future.html" class="font-semibold">Future</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-40 pb-32 text-center section px-6">
+  <h1 class="text-7xl md:text-8xl mb-10">Our Future</h1>
+  <p class="text-xl italic">
+    ভবিষ্যৎ মানে শুধু সময় না,  
+    ভবিষ্যৎ মানে আমরা একসাথে।
+  </p>
+</section>
+
+<!-- LONG LOVE TEXT -->
+<section class="section px-6 space-y-16 mb-40">
+  <p>
+    তোমাকে আমার জীবনে পাওয়া আমার জীবনের সবচেয়ে বড় নিয়ামত।  
+    আমি প্রতিদিন আল্লাহর কাছে শুকরিয়া আদায় করি তোমার জন্য।
+  </p>
+  <p>
+    আমি চাই আমাদের ভালোবাসা যেন শুধু অনুভূতিতে না থাকে,  
+    বরং আমাদের চরিত্র, ধৈর্য আর বিশ্বাসে প্রকাশ পায়।
+  </p>
+  <p>
+    আমি চাই এই দুনিয়ায় যেমন তুমি আমার সঙ্গী হও,  
+    তেমনি আখিরাতেও আমরা জান্নাতুল ফেরদৌসে একসাথে থাকি—ইনশাআল্লাহ।
+  </p>
+</section>
+
+<!-- IMAGE -->
+<section class="mb-40 px-6">
+  <img src="https://picsum.photos/1200/600?random=101" class="mx-auto rounded-3xl shadow-lg">
+</section>
+
+<!-- LOVE SLIDER -->
+<section class="section text-center px-6 mb-40">
+  <h2 class="text-4xl mb-10">আমাকে কতটা ভালোবাসো? 💗</h2>
+
+  <input type="range" min="0" max="100" value="50"
+    oninput="updateLove(this.value)"
+    class="w-full mb-6">
+
+  <p id="lovePercent" class="text-3xl mb-3">50%</p>
+  <p id="loveText" class="italic text-lg">এইটা সুন্দর ভালোবাসা 😌</p>
+</section>
+
+<!-- QUESTION -->
+<section class="section text-center px-6 mb-40">
+  <h2 class="text-4xl mb-10">একটা শেষ প্রশ্ন… 💍</h2>
+
+  <div class="bg-white/80 rounded-3xl p-12 shadow-xl">
+    <p id="qText" class="text-2xl mb-10">
+      তুমি কি আমার সাথে চিরকাল থাকতে চাও? 🫰🏻
+    </p>
+
+    <div class="flex justify-center gap-10">
+      <button onclick="answerYes()"
+        class="px-10 py-4 rounded-full bg-green-600 text-white text-lg">
+        হ্যাঁ 💖
+      </button>
+      <button onclick="answerNo()"
+        class="px-10 py-4 rounded-full bg-red-500 text-white text-lg">
+        না 😒
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- CONGRATS MODAL -->
+<div id="modalBg" class="fixed inset-0 hidden items-center justify-center bg-black/40">
+  <div class="bg-[#fff0f5] rounded-3xl p-12 max-w-xl text-center shadow-2xl">
+    <h2 class="text-4xl text-pink-600 mb-6">Congratulations 🎉</h2>
+    <p class="text-lg">
+      তুমি জীবনে জিতেছো,  
+      আর এই মানুষটাও জিতেছে তোমাকে পেয়ে।  
+      <br><br>
+      চিরকাল এভাবে ভালোবেসে যেও 😌
+    </p>
+  </div>
+</div>
+
+<script>
+const noQuestions = [
+  "আবারো ভাবো, আমার সাথে থাকবা? 🤔",
+  "আমার সাথে সংসার করবা তো? 😶",
+  "আমার সাথে বর–বউ খেলবা? 🥺",
+  "আমাকে কি তোমার হাতের রান্না খাওয়াবা? 😋",
+  "আমি অসুস্থ হলে আমার পাশে থাকবা তো? 😔",
+  "আমাকে কি সত্যি তোমার জামাই বানাবা? 😃",
+  "আমার বাপের বাড়ি কি তোমার শশুর বাড়ি হিসেবে মানবা? 😎",
+  "আমার সাথে মোমো খেতে যাবা? 🤤",
+  "তোমাকে নিয়ে ঘুরতে যাবো, যাবা তো? 😎"
+];
+
+let qi = 0;
+
+function answerNo() {
+  document.getElementById("qText").innerText =
+    noQuestions[qi % noQuestions.length];
+  qi++;
+}
+
+function answerYes() {
+  document.getElementById("modalBg").classList.remove("hidden");
+  document.getElementById("modalBg").classList.add("flex");
+}
+
+document.getElementById("modalBg").onclick = function(e) {
+  if (e.target === this) {
+    this.classList.add("hidden");
+    this.classList.remove("flex");
+  }
+}
+
+function updateLove(val) {
+  document.getElementById("lovePercent").innerText = val + "%";
+  let txt = "";
+  if (val < 20) txt = "জানতাম, ভালই বাসনা 😤";
+  else if (val < 40) txt = "এত কম ভালোবাসো! 🥹";
+  else if (val < 60) txt = "ধন্য হয়েছি আমি ধন্য, তোমার প্রেমেরই জন্য 🙂";
+  else if (val < 80) txt = "ভালবাসায়ও কি এ+ পাওয়া হবে না আমার? 😫";
+  else txt = "আমি তোমাকে ১০০% এর থেকেও বেশি ভালোবাসি 💕 ❤️ 🧡 💛 💚";
+  document.getElementById("loveText").innerText = txt;
+}
+</script>
+
+</body>
+</html>
