@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Memories</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600;700&family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      font-family:'Hind Siliguri',sans-serif;
+      background:linear-gradient(180deg,#fff7ef,#f7edf6);
+      color:#3a2e2a;
+    }
+
+    h1{font-family:'Great Vibes',cursive;}
+    h2,h3{font-family:'Playfair Display',serif;}
+
+    .decor{opacity:.08;pointer-events:none;}
+
+    /* Hover effect */
+    .memory-img{
+      transition:transform .45s ease,box-shadow .45s ease;
+    }
+    .memory-img:hover{
+      transform:scale(1.045);
+      box-shadow:0 28px 55px rgba(0,0,0,.28);
+    }
+
+    /* Slider */
+    .slide{display:none;}
+    .slide.active{display:block;}
+
+    /* Animations */
+    .fade-up{
+      animation:fadeUp 1.2s ease forwards;
+      opacity:0;
+    }
+
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(30px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    /* Slider buttons */
+    .slider-btn{
+      transition:opacity .6s ease;
+    }
+    .slider-btn.hide{
+      opacity:0;
+      pointer-events:none;
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff5ee]/90 backdrop-blur shadow">
+  <div class="max-w-6xl mx-auto px-6 py-3 flex justify-center space-x-6 text-sm">
+    <a href="index.html">Home</a>
+    <a href="letters.html">Letters</a>
+    <a href="songs.html">Songs</a>
+    <a href="memories.html" class="font-semibold">Memories</a>
+    <a href="future.html">Future</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-40 pb-24 text-center relative px-6">
+  <img src="https://cdn-icons-png.flaticon.com/512/4140/4140047.png" class="decor absolute top-16 left-10 w-32">
+  <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" class="decor absolute bottom-10 right-16 w-40">
+
+  <h1 class="text-7xl md:text-8xl mb-8 fade-up">
+    Our Memories
+  </h1>
+  <p class="max-w-2xl mx-auto italic fade-up">
+    কিছু স্মৃতি সময়ের নয়,  
+    তারা আমাদের হয়ে থাকে।
+  </p>
+</section>
+
+<!-- SLIDER -->
+<section class="w-full relative mb-28 fade-up">
+  <div id="sliderArea"
+       class="relative max-w-6xl mx-auto overflow-hidden rounded-2xl">
+
+    <img src="https://picsum.photos/1200/600?random=1" class="slide active memory-img w-full">
+    <img src="https://picsum.photos/1200/600?random=2" class="slide memory-img w-full">
+    <img src="https://picsum.photos/1200/600?random=3" class="slide memory-img w-full">
+
+    <!-- Buttons -->
+    <button id="prevBtn"
+            onclick="changeSlide(-1)"
+            class="slider-btn absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 px-4 py-2 rounded-full">
+      ❮
+    </button>
+    <button id="nextBtn"
+            onclick="changeSlide(1)"
+            class="slider-btn absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 px-4 py-2 rounded-full">
+      ❯
+    </button>
+  </div>
+
+  <!-- Dots -->
+  <div class="flex justify-center mt-4 gap-3">
+    <span class="dot w-3 h-3 bg-gray-400 rounded-full"></span>
+    <span class="dot w-3 h-3 bg-gray-300 rounded-full"></span>
+    <span class="dot w-3 h-3 bg-gray-300 rounded-full"></span>
+  </div>
+</section>
+
+<!-- STORY INTRO -->
+<section class="text-center max-w-3xl mx-auto mb-32 px-6 fade-up">
+  <h2 class="text-4xl mb-6">আমাদের গল্প</h2>
+  <p>
+    এই ছবিগুলো আমাদের পথচলার নীরব সাক্ষী।
+  </p>
+</section>
+
+<!-- MEMORY PATTERNS (UNCHANGED CONTENT) -->
+<section class="max-w-6xl mx-auto mb-24 px-6 grid md:grid-cols-2 gap-12 items-center fade-up">
+  <img src="https://picsum.photos/800/600?random=4" class="rounded-xl memory-img">
+  <div>
+    <h3 class="text-3xl mb-4">প্রথম দেখা</h3>
+    <p>সেই দিনের অনুভূতি এখনো মনে আছে।</p>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto mb-24 px-6 grid md:grid-cols-2 gap-12 items-center fade-up">
+  <div>
+    <h3 class="text-3xl mb-4">নীরব সময়</h3>
+    <p>চুপ থেকেও কত কথা বলা যায়।</p>
+  </div>
+  <img src="https://picsum.photos/800/600?random=5" class="rounded-xl memory-img">
+</section>
+
+<section class="max-w-6xl mx-auto mb-24 px-6 fade-up">
+  <div class="grid md:grid-cols-2 gap-10 mb-6">
+    <img src="https://picsum.photos/600/500?random=6" class="rounded-xl memory-img">
+    <img src="https://picsum.photos/600/500?random=7" class="rounded-xl memory-img">
+  </div>
+  <h3 class="text-3xl mb-2">হাসি আর মুহূর্ত</h3>
+  <p>এই হাসিগুলোই আমাদের শক্তি।</p>
+</section>
+
+<section class="max-w-6xl mx-auto mb-24 px-6 fade-up">
+  <div class="grid md:grid-cols-3 gap-8 mb-6">
+    <img src="https://picsum.photos/500/500?random=8" class="rounded-xl memory-img">
+    <img src="https://picsum.photos/500/500?random=9" class="rounded-xl memory-img">
+    <img src="https://picsum.photos/500/500?random=10" class="rounded-xl memory-img">
+  </div>
+  <h3 class="text-3xl mb-2">ছোট ছোট দিন</h3>
+  <p>যেগুলো একসাথে হয়ে জীবন বানিয়েছে।</p>
+</section>
+
+<!-- FINAL -->
+<section class="text-center max-w-3xl mx-auto pb-32 px-6 fade-up">
+  <h2 class="text-4xl mb-6">এটা শুধু শুরু</h2>
+  <p>
+    সামনে আরো পথ, আরো স্মৃতি অপেক্ষা করছে।
+  </p>
+</section>
+
+<footer class="text-center py-8 italic text-sm">
+  স্মৃতিগুলো ভালোবাসার রঙে আঁকা
+</footer>
+
+<script>
+let index=0;
+const slides=document.querySelectorAll('.slide');
+const dots=document.querySelectorAll('.dot');
+const prevBtn=document.getElementById('prevBtn');
+const nextBtn=document.getElementById('nextBtn');
+let hideTimer;
+
+function showSlide(i){
+  slides.forEach(s=>s.classList.remove('active'));
+  dots.forEach(d=>d.classList.replace('bg-gray-400','bg-gray-300'));
+  slides[i].classList.add('active');
+  dots[i].classList.replace('bg-gray-300','bg-gray-400');
+  resetButtons();
+}
+
+function changeSlide(n){
+  index=(index+n+slides.length)%slides.length;
+  showSlide(index);
+}
+
+function resetButtons(){
+  prevBtn.classList.remove('hide');
+  nextBtn.classList.remove('hide');
+  clearTimeout(hideTimer);
+  hideTimer=setTimeout(()=>{
+    prevBtn.classList.add('hide');
+    nextBtn.classList.add('hide');
+  },3000);
+}
+
+document.getElementById('sliderArea').addEventListener('mousemove',resetButtons);
+document.getElementById('sliderArea').addEventListener('touchstart',resetButtons);
+
+setInterval(()=>changeSlide(1),6000);
+resetButtons();
+</script>
+
+</body>
+</html>
