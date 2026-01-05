@@ -26,12 +26,17 @@
       color:#b03052;
     }
     .lift{
-      transition:transform .4s ease,box-shadow .4s ease;
-    }
-    .lift:hover{
-      transform:translateY(-8px);
-      box-shadow:0 25px 45px rgba(0,0,0,.18);
-    }
+  /* visible default shadow */
+  box-shadow: 0 12px 28px rgba(176,48,82,0.12);
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.lift:hover{
+  transform: translateY(-8px);
+  /* warmer, deeper shadow on hover */
+  box-shadow: 0 28px 55px rgba(176,48,82,0.28);
+}
+
   </style>
 </head>
 
